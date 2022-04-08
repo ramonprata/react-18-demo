@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useDeferredValue } from 'react';
 import CharacterItem from './CharacterItem';
 import { ICharacter } from '../../types/Character';
 import CharacerManager from '../services/CharacerManager';
@@ -10,10 +10,10 @@ interface CharactersListProps {
 }
 
 const CharactersList: React.FC<CharactersListProps> = ({ characters }) => {
-
+  const deferredCharacters = useDeferredValue(characters);
   return (
     <div className='characters'>
-      {characters?.map((character: ICharacter, idx) => (
+      {deferredCharacters?.map((character: ICharacter, idx: number) => (
         <CharacterItem character={character} key={`${character.name}-${idx}`} />
       ))}
     </div>

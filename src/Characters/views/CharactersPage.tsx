@@ -13,7 +13,6 @@ interface CharactersProps { }
 const CharactersPage: React.FC<CharactersProps> = () => {
   const [searchText, setSearchText] = useState('');
   const [filteredCharacters, setList] = useState<ICharacter[]>([]);
-  const [isPending, startTransition] = useTransition();
 
   const loadData = useCallback(() => {
     return Manager.getCharacters();
@@ -28,9 +27,9 @@ const CharactersPage: React.FC<CharactersProps> = () => {
   useEffect(() => {
     if (done) {
       const filtered = filterCharacters(characters, searchText);
-      startTransition(() => {
-        setList(filtered)
-      });
+
+      setList(filtered)
+
     }
   }, [searchText, done]);
 
@@ -43,7 +42,7 @@ const CharactersPage: React.FC<CharactersProps> = () => {
     <div style={{ padding: 0 }}>
 
       <input type='text' value={searchText} onChange={handleUpdateText} placeholder='Seach your favorite character' />
-      <p>Results: {isPending ? 'Searching..' : filteredCharacters.length}</p>
+      <p>Results: {filteredCharacters.length}</p>
       <div className='content'>
         {loading ? <p className='feedback'>LOADING...</p> :
           <CharactersList characters={filteredCharacters} />
