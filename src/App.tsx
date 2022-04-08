@@ -1,12 +1,12 @@
 import './App.css';
-import Characters from './Characters/Characters';
+import CharactersPage from './Characters/views/CharactersPage';
 
 function App() {
   return (
     <div className="App">
       <div className='container'>
         <h1>{`Ricky & Morty`}</h1>
-        <Characters />
+        <CharactersPage />
       </div>
     </div>
   );

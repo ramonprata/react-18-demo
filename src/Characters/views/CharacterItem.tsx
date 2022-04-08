@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICharacter } from '../types/Character';
+import { ICharacter } from '../../types/Character';
 
 interface CharacterItemProps {
   character: ICharacter

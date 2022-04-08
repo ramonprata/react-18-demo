@@ -1,6 +1,6 @@
 .App {
   background-color: rgb(36, 40, 46);
-  height: auto;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   background-color: 'red';
-  max-height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
 }
 
@@ -22,6 +22,7 @@
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   column-gap: 1.5rem;
   row-gap: 2rem;
+  padding: 16px;
 }
 
 .card {
@@ -158,4 +159,24 @@ p {
 
     margin-bottom: 3rem;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(59, 62, 67);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
