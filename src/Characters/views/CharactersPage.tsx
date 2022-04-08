@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState, useTransition } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { ICharacter } from '../../types/Character';
 import { usePromise } from '../../shared/hooks/usePromise';
