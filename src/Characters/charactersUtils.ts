@@ -7,8 +7,10 @@ export const filterCharacters = (
 ) => {
   if (characters) {
     return characters.filter((c) => {
-      const { image, ...otherProperties } = c;
-      return objectMatchText({ ...otherProperties }, searchText);
+      return objectMatchText(
+        { name: c.name, location: c.location.name, status: c.status, species: c.species },
+        searchText
+      );
     });
   }
   return [];

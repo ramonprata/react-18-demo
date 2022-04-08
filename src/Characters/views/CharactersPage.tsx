@@ -30,7 +30,7 @@ const CharactersPage: React.FC<CharactersProps> = () => {
       const filtered = filterCharacters(characters, searchText);
       startTransition(() => {
         setList(filtered)
-      })
+      });
     }
   }, [searchText, done]);
 
@@ -43,9 +43,9 @@ const CharactersPage: React.FC<CharactersProps> = () => {
     <div style={{ padding: 0 }}>
 
       <input type='text' value={searchText} onChange={handleUpdateText} placeholder='Seach your favorite character' />
-      <p>Results: {filteredCharacters.length}</p>
+      <p>Results: {isPending ? 'Searching..' : filteredCharacters.length}</p>
       <div className='content'>
-        {loading ? <h6 className='feedback'>LOADING...</h6> :
+        {loading ? <p className='feedback'>LOADING...</p> :
           <CharactersList characters={filteredCharacters} />
         }
       </div>

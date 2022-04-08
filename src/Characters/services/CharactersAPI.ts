@@ -2,7 +2,7 @@ import { ICharacterInfo } from '../../types/ICharacterInfo';
 
 export const fetchCharacters = async (): Promise<ICharacterInfo['results']> => {
   const promises = [];
-  for (let index = 1; index < 20; index++) {
+  for (let index = 1; index < 40; index++) {
     const URL = `https://rickandmortyapi.com/api/character/?page=${index}`;
     promises.push(fetch(URL));
   }
