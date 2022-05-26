@@ -1,9 +1,6 @@
 import React from 'react';
 import CharacterItem from './CharacterItem';
 import { ICharacter } from '../../types/Character';
-import CharacerManager from '../services/CharacerManager';
-
-const Manager = new CharacerManager();
 
 interface CharactersListProps {
   characters: ICharacter[]
