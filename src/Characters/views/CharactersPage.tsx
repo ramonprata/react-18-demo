@@ -36,8 +36,14 @@ const CharactersPage: React.FC<CharactersProps> = () => {
 
   return (
     <div style={{ padding: 0 }}>
-      <input type='text' value={inputText} onChange={handleUpdateText} placeholder='Seach your favorite character' />
+      <input
+        type='text'
+        value={inputText}
+        onChange={handleUpdateText}
+        placeholder='Seach your favorite character' />
+
       <p>Results: {isPending ? 'Searching..' : filteredCharacters.length}</p>
+
       <div className='content'>
         {
           shouldRenderContent ?
