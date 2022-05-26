@@ -12,7 +12,7 @@ interface CharactersProps { }
 
 const CharactersPage: React.FC<CharactersProps> = () => {
   const [searchText, setSearchText] = useState('');
-  const [filteredCharacters, setList] = useState<ICharacter[]>([]);
+  // const [filteredCharacters, setList] = useState<ICharacter[]>([]);
 
   const loadData = useCallback(() => {
     return Manager.getCharacters();
@@ -24,14 +24,7 @@ const CharactersPage: React.FC<CharactersProps> = () => {
     setSearchText(event.target.value)
   }
 
-  useEffect(() => {
-    if (done) {
-      const filtered = filterCharacters(characters, searchText);
-
-      setList(filtered)
-
-    }
-  }, [searchText, done]);
+  const filteredCharacters = filterCharacters(characters, searchText);
 
   if (error) {
     return <div>ERROR</div>
